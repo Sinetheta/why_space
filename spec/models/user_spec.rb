@@ -11,5 +11,10 @@ RSpec.describe User, type: :model do
       user = described_class.new(valid_attributes)
       expect(user.valid?).to be(true)
     end
+
+    it 'has a working factory' do
+      user = build(:user)
+      expect(user.valid?).to be(true)
+    end
   end
 end
