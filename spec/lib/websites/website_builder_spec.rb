@@ -6,7 +6,8 @@ RSpec.describe Websites::WebsiteBuilder, type: :model do
   let(:website_builder) {
     described_class.new(
       full_url,
-      member: member
+      member: member,
+      url_shortener: Websites::DummyUrlShortener
     )
   }
 
