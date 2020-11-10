@@ -17,4 +17,11 @@ RSpec.describe Member, type: :model do
       expect(member.valid?).to be(true)
     end
   end
+
+  describe 'full_name validations' do
+    it 'requires a full_name' do
+      member = build(:member, full_name: nil)
+      expect(member.valid?).to be(false)
+    end
+  end
 end
