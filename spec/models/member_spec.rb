@@ -11,5 +11,10 @@ RSpec.describe Member, type: :model do
       member = described_class.new(valid_attributes)
       expect(member.valid?).to be(true)
     end
+
+    it 'has a working factory' do
+      member = build(:member)
+      expect(member.valid?).to be(true)
+    end
   end
 end
