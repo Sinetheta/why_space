@@ -247,6 +247,7 @@ DEPENDENCIES
   factory_bot_rails
   jbuilder (~> 2.7)
   listen (~> 3.2)
+  nokogiri
   pry-rails
   puma (~> 4.1)
   rack-mini-profiler
