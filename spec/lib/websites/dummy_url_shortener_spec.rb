@@ -1,17 +1,17 @@
 require 'rails_helper'
 require 'open-uri'
 
-RSpec.describe Websites::UrlShortener, type: :model do
-  let(:full_url) { 'https://exmaple.com' }
+RSpec.describe Websites::DummyUrlShortener, type: :model do
+  let(:valid_url) { 'https://exmaple.com' }
   let(:url_shortener) {
-    described_class.new(full_url)
+    described_class.new(valid_url)
   }
 
   describe 'call' do
     subject { url_shortener.call }
 
-    it 'returns a bitly url' do
-      expect(subject).to start_with('https://bit.ly')
+    it 'returns the same url' do
+      expect(subject).to eq(valid_url)
     end
 
     it 'returns a valid url' do
