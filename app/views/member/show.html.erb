@@ -1,1 +1,3 @@
 <h1><%= @member.full_name %></h1>
+
+<%= render partial: 'websites_list', locals: { websites: @member.websites } %>

@@ -1,3 +1,5 @@
 <h1>My Profile</h1>
 
 <p>Name: <%= @member.full_name %><p>
+
+<%= render partial: 'websites_list', locals: { websites: @member.websites } %>

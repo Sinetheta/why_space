@@ -1,0 +1,3 @@
+<% websites.each do |website| %>
+  <p>Website: <%= link_to website.full_url, website.full_url %> (<%= link_to website.short_url, website.short_url %>)<p>
+<% end %>
