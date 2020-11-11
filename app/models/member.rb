@@ -14,4 +14,10 @@ class Member < ApplicationRecord
     # TODO: single query
     from_members + to_members
   end
+
+  # All members who could be added as a friend.
+  def elligible_friends
+    # TODO: single query
+    Member.where.not(id: id) - friends
+  end
 end
