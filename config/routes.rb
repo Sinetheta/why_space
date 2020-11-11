@@ -4,6 +4,8 @@ Rails.application.routes.draw do
     registrations: 'users/registrations'
   }
 
+  resources :friendships, only: [:create]
+
   resources :members, only: [:show] do
     get 'my_profile', on: :collection
   end
