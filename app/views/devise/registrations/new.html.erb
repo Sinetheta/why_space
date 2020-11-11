@@ -21,6 +21,14 @@
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
 
+
+  <%= fields_for :member do |ff| %>
+    <div class="field">
+      <%= ff.label :full_name %><br />
+      <%= ff.text_field :full_name  %>
+    </div>
+  <% end %>
+
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>

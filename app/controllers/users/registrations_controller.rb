@@ -10,9 +10,13 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # POST /resource
-  # def create
-  #   super
-  # end
+  def create
+    super
+    member = Member.create(
+      full_name: params[:member][:full_name],
+      user: current_user
+    )
+  end
 
   # GET /resource/edit
   # def edit
