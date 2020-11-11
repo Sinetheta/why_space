@@ -1,4 +1,4 @@
-class MemberController < ApplicationController
+class MembersController < ApplicationController
   def my_profile
     @member = Member.eager_load(:passions, :websites).find_by(user: current_user)
   end
