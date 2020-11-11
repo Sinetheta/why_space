@@ -11,5 +11,10 @@ RSpec.describe Friendship, type: :model do
       friendship = described_class.new(valid_attributes)
       expect(friendship.valid?).to be(true)
     end
+
+    it 'has a working factory' do
+      friendship = build(:friendship)
+      expect(friendship.valid?).to be(true)
+    end
   end
 end
