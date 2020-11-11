@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_10_232231) do
+ActiveRecord::Schema.define(version: 2020_11_11_173917) do
+
+  create_table "friendships", force: :cascade do |t|
+    t.integer "from_member_id", null: false
+    t.integer "to_member_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["from_member_id", "to_member_id"], name: "index_friendships_on_from_member_id_and_to_member_id", unique: true
+    t.index ["from_member_id"], name: "index_friendships_on_from_member_id"
+    t.index ["to_member_id"], name: "index_friendships_on_to_member_id"
+  end
 
   create_table "members", force: :cascade do |t|
     t.integer "user_id", null: false
@@ -51,6 +61,8 @@ ActiveRecord::Schema.define(version: 2020_11_10_232231) do
     t.index ["member_id"], name: "index_websites_on_member_id"
   end
 
+  add_foreign_key "friendships", "members", column: "from_member_id"
+  add_foreign_key "friendships", "members", column: "to_member_id"
   add_foreign_key "members", "users"
   add_foreign_key "passions", "members"
   add_foreign_key "passions", "websites"
