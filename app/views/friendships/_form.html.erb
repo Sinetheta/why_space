@@ -1,0 +1,8 @@
+<%= form_for friendship do |f| %>
+  <%= f.hidden_field :from_member_id %>
+
+  <%= f.label :to_member_id %>
+  <%= f.collection_select :to_member_id, elligible_friends, :id, :full_name %>
+
+  <%= f.submit 'Add Friend' %>
+<% end %>

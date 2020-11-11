@@ -13,3 +13,8 @@
 <%= render partial: 'friendships/list', locals: {
   friends: @member.friends
 } %>
+
+<%= render partial: 'friendships/form', locals: {
+  friendship: @member.from_friendships.new,
+  elligible_friends: @member.elligible_friends
+} %>
