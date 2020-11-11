@@ -1,9 +1,9 @@
 class MemberController < ApplicationController
   def my_profile
-    @member = Member.eager_load(:websites).find_by(user: current_user)
+    @member = Member.eager_load(:passions, :websites).find_by(user: current_user)
   end
 
   def show
-    @member = Member.eager_load(:websites).find(params[:id])
+    @member = Member.eager_load(:passions, :websites).find(params[:id])
   end
 end

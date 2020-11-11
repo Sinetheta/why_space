@@ -3,3 +3,7 @@
 <p>Name: <%= @member.full_name %><p>
 
 <%= render partial: 'websites_list', locals: { websites: @member.websites } %>
+
+<h2>My Topics of Interest</h2>
+
+<%= render partial: 'passions_list', locals: { passions: @member.passions } %>
