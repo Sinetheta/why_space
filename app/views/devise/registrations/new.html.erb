@@ -29,6 +29,13 @@
     </div>
   <% end %>
 
+  <%= fields_for :website do |ff| %>
+    <div class="field">
+      <%= ff.label :full_url %><br />
+      <%= ff.url_field :full_url  %>
+    </div>
+  <% end %>
+
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>
