@@ -12,7 +12,9 @@ class MembersController < ApplicationController
   def member_profile_page_scope
     Member.eager_load(
       :passions,
-      :websites
+      :websites,
+      :from_members,
+      :to_members
     )
   end
 end

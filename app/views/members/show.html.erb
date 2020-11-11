@@ -5,3 +5,9 @@
 <h2>Topics of Interest</h2>
 
 <%= render partial: 'passions_list', locals: { passions: @member.passions } %>
+
+<h2>Friends</h2>
+
+<%= render partial: 'member_friendships/list', locals: {
+  friends: @member.friends
+} %>

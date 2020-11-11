@@ -1,0 +1,5 @@
+<ul>
+  <% friends.each do |friend| %>
+    <li><%= link_to friend.full_name, member_path(friend) %>
+  <% end %>
+</ul>
