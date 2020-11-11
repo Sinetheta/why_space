@@ -17,3 +17,10 @@ You will need a Bitly API key before getting started.
 - `bin/rake db:setup`
 - `export BITLY_API_KEY=...`
 - `bin/rails s`
+
+There are a number of seed users which can all be accessed with
+
+```
+login: email_#{n}@example.com
+password: test1234
+```

@@ -1,7 +1,44 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+SEED_PW = 'test1234'
+SEED_URL = 'https://example.com'
+SEED_TOPICS = %w{
+  Science
+  Chemistry
+  Physics
+  Computers
+  Ecomm
+  Cats
+  Dogs
+  Dance
+  Gardening
+  France
+  Trees
+}
+SEED_FRIEND_COUNT = 3
+
+puts "\nGenerating some Users and Members"
+members = (1..20).map do |n|
+  user = User.create(email: "email_#{n}@example.com", password: SEED_PW)
+  print '.'
+  Member.create(user: user, full_name: "Test User #{n}")
+end
+
+puts "\nGenerating some Websites and Passions for those Members"
+members.each do |member|
+  website = Website.create(member: member, full_url: SEED_URL, short_url: SEED_URL)
+  print '.'
+  5.times do
+    topic = SEED_TOPICS.sample(2).join(' and ')
+    Passion.create(member: member, website: website, topic: topic)
+    print '.'
+  end
+end
+
+puts "\nGenerating some Friendships between those Members"
+members.each do |member|
+  (members - [member]).sample(SEED_FRIEND_COUNT).each do |friend|
+    Friendship.create(from_member: member, to_member: friend)
+    print '.'
+  end
+end
+
+puts "\nDB seed complete!"
