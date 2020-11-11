@@ -16,7 +16,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
       full_name: params[:member][:full_name],
       user: current_user
     )
-    Websites::WebsiteBuilder.new(params[:website][:full_url], member: member).call
+    website = Websites::WebsiteBuilder.new(
+      params[:website][:full_url],
+      member: member
+    ).call
+    Websites::PassionsFactory.new(member, website).call
   end
 
   # GET /resource/edit
