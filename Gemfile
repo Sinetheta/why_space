@@ -30,6 +30,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 
 gem 'bitly'
 gem 'devise'
+gem 'dijkstra', github: 'thinkphp/dijkstra.gem', branch: 'master'
 gem 'dry-initializer-rails'
 gem 'dry-types'
 gem 'nokogiri'
