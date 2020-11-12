@@ -16,6 +16,14 @@ module Searches
 
     private
 
+    # This gems expects a directed graph, so we need to sort the vertices if
+    # we want it to recognize all connections.
+    # We're doing it inside this class because I have also seen the gem
+    # metate the array and I don't want it wreck the friendship_graph.
+    def undirected_graph
+      friendship_graph.map{ |(x, y, weight)| [x, y].sort + [weight] }
+    end
+
     def on_the_graph?
       graphed_ids.include?(to_member_id)
     end
@@ -25,7 +33,7 @@ module Searches
     end
 
     def shortest_path
-      @shortest_path ||= ::Dijkstra.new(from_member_id, to_member_id, friendship_graph).shortest_path
+      @shortest_path ||= ::Dijkstra.new(from_member_id, to_member_id, undirected_graph).shortest_path
     end
   end
 end

@@ -38,5 +38,19 @@ RSpec.describe Searches::FindPath, type: :model do
         expect(subject).to eq(nil)
       end
     end
+
+    context 'with a graph that has unsorted edges' do
+      let(:friendship_graph) {[
+        [1, 2, 1],
+        [3, 2, 1],
+        [3, 4, 1],
+
+        [3, 1, 1]
+      ]}
+
+      it 'returns the shortest path' do
+        expect(subject).to eq([1, 3, 4])
+      end
+    end
   end
 end
