@@ -1,6 +1,8 @@
-> :warning: **Quick and dirty code here**: This project is a coding challenge
-  written on a strict timeline. Take this code with a grain of salt, but I would
-  be happy to discuss any concerns.
+> :warning: **Quick and dirty code here**: This project is my submission to a
+  [coding challenge](challenge.md). ~It was written on a strict timeline~ It was
+  written with _some_ haste, but mostly I wanted to have fun. I'd be more than
+  happy to discuss any part of this solution or my thoughts on the take-home
+  challenge as presented to me.
 
 # WhySpace
 
