@@ -1,0 +1,15 @@
+<h1>Topic Experts Search Results</h1>
+
+<% if @introductions.none? %>
+  Sorry we couldn't find any friends of friends who can introduce you to experts in <b>"<%= @topic %>"</b>.
+<% else %>
+  Friends of friends who can introduce you to experts in <b>"<%= @topic %>"</b>...
+  <ul>
+    <% @introductions.each do |introduction| %>
+      <li>
+        <%= render partial: 'introduction_links', locals: { introduction: introduction } %>
+        (<%= introduction.topic %>)
+      </li>
+    <% end %>
+  </ul>
+<% end %>

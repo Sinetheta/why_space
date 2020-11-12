@@ -18,3 +18,5 @@
   friendship: @member.from_friendships.new,
   elligible_friends: @member.elligible_friends
 } %>
+
+<%= render partial: 'member_searches/topic_experts_form', locals: { member: @member } %>

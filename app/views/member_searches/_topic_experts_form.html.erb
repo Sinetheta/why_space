@@ -1,0 +1,6 @@
+<%= form_with url: member_topic_experts_path(member), local: true do |f| %>
+  <%= f.label :topic %>
+  <%= f.text_field :topic %>
+
+  <%= f.submit 'Find Experts' %>
+<% end %>
