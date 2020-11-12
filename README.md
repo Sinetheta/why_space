@@ -9,6 +9,12 @@
 WhySpace is a barebones social media clone. It's a Ruby on rails project which
 uses Devise for login and Bitly as a link shortener to create member profiles.
 
+[![thumbnail welcome page](thumbnail-welcome.png "Welcome Page")](screenshot-welcome.png)
+
+[![thumbnail profile page](thumbnail-profile.png "My Profile Page")](screenshot-profile.png)
+
+[![thumbnail search results page](thumbnail-search.png "Search Results")](screenshot-search.png)
+
 ## Installation
 
 You will need a Bitly API key before getting started.
