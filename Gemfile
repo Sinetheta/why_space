@@ -31,6 +31,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem 'bitly'
 gem 'devise'
 gem 'dry-initializer-rails'
+gem 'dry-types'
 gem 'nokogiri'
 
 group :development, :test do
