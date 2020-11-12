@@ -20,7 +20,7 @@ RSpec.describe Searches::FindPath, type: :model do
     subject { path_finder.call }
 
     it 'returns the shortest path' do
-      expect(subject).to eq([1, 3, 4])
+      expect(subject).to eq([3, 4])
     end
 
     context 'to a node with no path' do
@@ -49,7 +49,7 @@ RSpec.describe Searches::FindPath, type: :model do
       ]}
 
       it 'returns the shortest path' do
-        expect(subject).to eq([1, 3, 4])
+        expect(subject).to eq([3, 4])
       end
     end
   end

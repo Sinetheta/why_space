@@ -11,7 +11,7 @@ module Searches
     # a chain exists.
     def call
       return nil unless on_the_graph? # Prevents a stack overflow in the gem
-      return shortest_path if shortest_path.length > 1
+      return shortest_path[1..-1] if shortest_path.length > 1
     end
 
     private

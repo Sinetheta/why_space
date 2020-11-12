@@ -27,7 +27,6 @@ RSpec.describe Searches::TopicSearch, type: :model do
         have_attributes(
           class: Searches::Introduction,
           members: match_array([
-            have_attributes(class: Member, id: member.id),
             have_attributes(class: Member, id: popular_member.id),
             have_attributes(class: Member, id: cat_expert.id)
           ]),
@@ -36,7 +35,6 @@ RSpec.describe Searches::TopicSearch, type: :model do
         have_attributes(
           class: Searches::Introduction,
           members: match_array([
-            have_attributes(class: Member, id: member.id),
             have_attributes(class: Member, id: popular_member.id),
             have_attributes(class: Member, id: cats_and_dogs.id)
           ]),
