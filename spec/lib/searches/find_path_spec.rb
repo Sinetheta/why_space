@@ -30,5 +30,13 @@ RSpec.describe Searches::FindPath, type: :model do
         expect(subject).to eq(nil)
       end
     end
+
+    context 'with a node not on the graph' do
+      let(:to_member_id) { 6 }
+
+      it 'returns nil' do
+        expect(subject).to eq(nil)
+      end
+    end
   end
 end
