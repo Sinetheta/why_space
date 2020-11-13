@@ -23,8 +23,8 @@ members = (1..20).map do |n|
 end
 
 puts "\nGenerating some Websites and Passions for those Members"
-members.each do |member|
-  website = Website.create(member: member, full_url: SEED_URL, short_url: SEED_URL)
+members.each_with_index do |member, i|
+  website = Website.create(member: member, full_url: "https://example.com/#{i}", short_url: "https://ex.com/#{i}")
   print '.'
   5.times do
     topic = SEED_TOPICS.sample(2).join(' and ')
