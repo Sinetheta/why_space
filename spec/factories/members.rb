@@ -9,8 +9,8 @@ FactoryBot.define do
     end
 
     after(:create) do |member, evaluator|
-      website = member.websites.first || create(:website, member: member)
       evaluator.passion_topics.each do |topic|
+        website = member.websites.first || create(:website, member: member)
         member.passions.create(website: website, topic: topic)
       end
     end
