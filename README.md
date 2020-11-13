@@ -9,7 +9,7 @@
 WhySpace is a barebones social media clone. It's a Ruby on rails project which
 uses Devise for login and Bitly as a link shortener to create member profiles.
 
-[![thumbnail welcome page](thumbnail-welcome.png "Welcome Page")](screenshot-welcome.png)
+[![thumbnail home page](thumbnail-home.png "Home Page")](screenshot-home.png)
 
 [![thumbnail profile page](thumbnail-profile.png "My Profile Page")](screenshot-profile.png)
 
@@ -79,6 +79,7 @@ pathfinding gems.
 * Pathfinding on the graph to those experts
 * Search form on my profile page
 * Search results display as profile page links
+* Members list page
 
 Day 3 is when I tied it all together with the experts' search. I guess you could
 complain that the only computer science in this challenge I have delegated to
