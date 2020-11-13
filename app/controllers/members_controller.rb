@@ -1,4 +1,8 @@
 class MembersController < ApplicationController
+  def index
+    @members = Members::AllMemberPreviews.new.call
+  end
+
   def my_profile
     @member = member_profile_page_scope.find_by(user: current_user)
   end

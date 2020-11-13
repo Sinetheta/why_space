@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   resources :friendships, only: [:create]
 
-  resources :members, only: [:show] do
+  resources :members, only: [:index, :show] do
     get 'my_profile', on: :collection
     post 'topic_experts', controller: 'member_searches'
   end
