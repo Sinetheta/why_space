@@ -11,5 +11,5 @@ Rails.application.routes.draw do
     post 'topic_experts', controller: 'member_searches'
   end
 
-  root 'welcome#home'
+  root 'members#index'
 end
