@@ -16,6 +16,9 @@
       <% if user_signed_in? %>
         <%= link_to('My Profile', my_profile_members_path) %>
         <%= button_to('Logout', destroy_user_session_path, method: :delete) %>
+      <% else %>
+        <%= button_to 'Join Now', new_user_registration_path, method: :get %>
+        <%= button_to 'Already a Member', new_user_session_path, method: :get %>
       <% end %>
     </footer>
   </body>
