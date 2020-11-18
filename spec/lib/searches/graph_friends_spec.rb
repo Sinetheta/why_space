@@ -18,8 +18,11 @@ RSpec.describe Searches::GraphFriends, type: :model do
     it 'returns a graph of all friendships with equal weight 1' do
       expect(subject).to contain_exactly(
         [member1.id, member2.id, 1],
+        [member2.id, member1.id, 1],
         [member1.id, member3.id, 1],
-        [member2.id, member3.id, 1]
+        [member3.id, member1.id, 1],
+        [member2.id, member3.id, 1],
+        [member3.id, member2.id, 1]
       )
     end
   end
