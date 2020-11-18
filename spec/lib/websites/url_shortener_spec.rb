@@ -16,7 +16,7 @@ RSpec.describe Websites::UrlShortener, type: :model do
 
     it 'returns a valid url' do
       # Good place to VCR
-      expect(open(subject).status).to eq(["200", "OK"])
+      expect(URI.open(subject).status).to eq(["200", "OK"])
     end
   end
 end

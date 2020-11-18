@@ -11,7 +11,7 @@ module Websites
     HEADINGS_SELECTOR = 'h1, h2, h3'
 
     def call
-      doc = Nokogiri::HTML(open(full_url))
+      doc = Nokogiri::HTML(URI.open(full_url))
       doc.css(HEADINGS_SELECTOR).map(&:text)
     end
   end
