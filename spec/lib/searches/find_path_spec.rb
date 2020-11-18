@@ -48,8 +48,8 @@ RSpec.describe Searches::FindPath, type: :model do
         [3, 1, 1]
       ]}
 
-      it 'returns the shortest path' do
-        expect(subject).to eq([3, 4])
+      it 'returns nil because we require BOTH direction in the graph' do
+        expect(subject).to eq(nil)
       end
     end
   end
