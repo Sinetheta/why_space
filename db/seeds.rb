@@ -36,6 +36,7 @@ end
 puts "\nGenerating some Friendships between those Members"
 members.each do |member|
   (members - [member]).sample(SEED_FRIEND_COUNT).each do |friend|
+    Friendship.find_by(from_member: friend, to_member: member) ||
     Friendship.create(from_member: member, to_member: friend)
     print '.'
   end
